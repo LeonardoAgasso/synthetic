@@ -1,0 +1,68 @@
+name: Segnala un brand / Report a brand
+description: Proponi un brand che ha dichiarato di usare modelle o modelli generati con l'AI, o che si è impegnato a non farlo.
+title: "[Nuovo] "
+labels: ["segnalazione"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grazie per la segnalazione. Nel registro entrano solo casi che il brand ha **dichiarato** (post, comunicato, dicitura nell'annuncio) o **confermato** a una testata. Sospetti e analisi di immagini non bastano.
+
+        Thanks for reporting. We only list cases the brand **disclosed** (post, press release, note in the ad) or **confirmed** to a news outlet. Suspicions and image analysis aren't enough.
+  - type: input
+    id: brand
+    attributes:
+      label: Brand
+      placeholder: "es. / e.g. Guess"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Tipo di caso / Type of case
+      options:
+        - Usa modelle o modelli generati con l'AI / Uses AI-generated models
+        - Si è impegnato a non usarli / Pledged not to use them
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Link alla fonte / Source link
+      description: Il post del brand, il comunicato o un articolo di una testata affidabile. / The brand's post, press release or an article from a reliable outlet.
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Quando? / When?
+      placeholder: "2025-08"
+  - type: input
+    id: country
+    attributes:
+      label: Paese del brand / Brand's country
+  - type: dropdown
+    id: uses
+    attributes:
+      label: Dove è stato usato? / Where was it used?
+      multiple: true
+      options:
+        - Campagna pubblicitaria / Ad campaign
+        - Social / Social media
+        - Foto prodotto / Product photos
+        - Spot video / Video ad
+        - Gemelli digitali / Digital twins
+        - Influencer virtuale / Virtual influencer
+  - type: textarea
+    id: notes
+    attributes:
+      label: Note / Notes
+      description: Cosa è successo, in due o tre frasi. / What happened, in two or three sentences.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Verifica / Check
+      options:
+        - label: La fonte mostra che il brand lo ha dichiarato o confermato. / The source shows the brand disclosed or confirmed it.
+          required: true

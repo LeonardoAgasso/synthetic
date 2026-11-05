@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Synthetic: i brand che usano modelle e modelli generati con l’AI</title>
+  <meta name="description" content="Un registro pubblico, con fonti, dei brand che hanno dichiarato di usare persone generate con l’AI nella loro pubblicità.">
+
+  <!-- Anteprima per social e chat: sostituisci TUO-UTENTE con il tuo username GitHub -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Synthetic: quali brand usano modelle e modelli generati con l’AI?">
+  <meta property="og:description" content="Un registro pubblico, con fonti, dei brand che lo hanno dichiarato.">
+  <meta property="og:url" content="https://TUO-UTENTE.github.io/synthetic/">
+  <meta property="og:image" content="https://TUO-UTENTE.github.io/synthetic/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-title="meta.homeTitle">
+
+  <div class="wrap">
+    <header class="site-header">
+      <a class="wordmark" href="./">Synthetic</a>
+      <nav class="nav">
+        <a href="metodo.html" data-i18n="nav.method">Come funziona</a>
+        <a href="#" data-link="repo" rel="noopener" data-i18n="nav.repo">GitHub</a>
+        <div class="lang-switch" role="group" data-i18n-aria="nav.lang" aria-label="Lingua">
+          <button type="button" data-set-lang="it" aria-pressed="true" lang="it">IT</button>
+          <button type="button" data-set-lang="en" aria-pressed="false" lang="en">EN</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1 data-i18n="hero.title">Quali brand usano modelle e modelli generati con l’AI?</h1>
+          <p class="hero-intro" data-i18n="hero.intro">Un registro pubblico dei brand che hanno dichiarato di usare persone generate con l’intelligenza artificiale nella loro pubblicità. Ogni voce ha la sua fonte.</p>
+          <div class="actions">
+            <a class="button" href="#" data-link="report" rel="noopener" target="_blank" data-i18n="hero.report">Segnala un brand</a>
+            <a href="metodo.html" data-i18n="hero.method">Come scegliamo i casi</a>
+          </div>
+        </div>
+
+        <aside class="care-label" aria-live="polite">
+          <p class="care-label-title" data-i18n="label.title">Composizione</p>
+          <p class="care-label-big" id="label-brands">–</p>
+          <p class="care-label-sub" id="label-countries"></p>
+          <p class="care-label-rule" data-i18n="label.rule">Solo casi dichiarati o confermati dal brand.</p>
+          <p class="care-label-updated" id="label-updated"></p>
+        </aside>
+      </section>
+
+      <section class="registry" aria-labelledby="registry-title">
+        <h2 class="visually-hidden" id="registry-title" data-i18n="nav.home">Registro</h2>
+
+        <div class="registry-head">
+          <div class="tabs" role="group" data-i18n-aria="tabs.label" aria-label="Mostra">
+            <button type="button" class="tab" data-category="ai" aria-pressed="true">
+              <span data-i18n="tabs.ai">Usano modelli AI</span>
+              <span class="tab-count"></span>
+            </button>
+            <button type="button" class="tab" data-category="no-ai" aria-pressed="false">
+              <span data-i18n="tabs.noai">Hanno scelto di non usarli</span>
+              <span class="tab-count"></span>
+            </button>
+          </div>
+
+          <div class="filters">
+            <div class="field field-search">
+              <label for="search" data-i18n="filters.search">Cerca</label>
+              <input type="search" id="search" autocomplete="off" data-i18n-placeholder="filters.searchPlaceholder" placeholder="Brand, paese, campagna…">
+            </div>
+            <div class="field">
+              <label for="filter-sector" data-i18n="filters.sector">Settore</label>
+              <select id="filter-sector"></select>
+            </div>
+            <div class="field" id="filter-use-wrap">
+              <label for="filter-use" data-i18n="filters.use">Uso</label>
+              <select id="filter-use"></select>
+            </div>
+            <div class="field">
+              <label for="filter-year" data-i18n="filters.year">Anno</label>
+              <select id="filter-year"></select>
+            </div>
+          </div>
+
+          <div class="results-bar">
+            <span id="count" aria-live="polite"></span>
+            <button type="button" class="linklike" id="clear" hidden data-i18n="filters.clear">Azzera filtri</button>
+          </div>
+        </div>
+
+        <div class="status" id="status" hidden></div>
+        <ol class="entries" id="list"></ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <p data-i18n="footer.disclaimer">Progetto indipendente, non affiliato ai brand citati. I marchi appartengono ai rispettivi titolari. Non pubblichiamo immagini delle campagne: rimandiamo sempre alle fonti.</p>
+        </div>
+        <div>
+          <h2 data-i18n="footer.data">Scarica i dati</h2>
+          <ul>
+            <li><button type="button" class="linklike" id="download-csv">CSV</button></li>
+            <li><a href="data/brands.json">JSON</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 data-i18n="footer.contribute">Partecipa</h2>
+          <ul>
+            <li><a href="#" data-link="report" rel="noopener" target="_blank" data-i18n="footer.report">Segnala un brand</a></li>
+            <li><a href="#" data-link="correct" rel="noopener" target="_blank" data-i18n="footer.correct">Chiedi una correzione</a></li>
+            <li data-email hidden><a href="#" data-i18n="footer.email">Scrivici</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
