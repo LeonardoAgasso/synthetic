@@ -1,0 +1,30 @@
+name: Request a correction
+description: Report a mistake or outdated information, or ask for an entry to be removed.
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      description: The brand name or entry id.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong?
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Supporting source
+      placeholder: https://
+  - type: dropdown
+    id: role
+    attributes:
+      label: Are you writing on behalf of the brand?
+      options:
+        - "No"
+        - "Yes"

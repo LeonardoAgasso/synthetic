@@ -9,14 +9,8 @@
       "country": "NL",
       "date": "2025-12",
       "uses": ["video"],
-      "note": {
-        "it": "Spot natalizio di 45 secondi generato interamente con l’AI, pubblicato su YouTube il 6 dicembre e ritirato tre giorni dopo in seguito alle critiche.",
-        "en": "A 45-second Christmas ad made entirely with generative AI, posted on YouTube on 6 December and withdrawn three days later after a backlash."
-      },
-      "disclosure": {
-        "it": "Il brand ha confermato a più testate che lo spot era generato con l’AI e che lo aveva rimosso.",
-        "en": "The brand confirmed to several outlets that the ad was AI-generated and that it had been removed."
-      },
+      "note": "A 45-second Christmas ad made entirely with generative AI, posted on YouTube on 6 December and withdrawn three days later after a backlash.",
+      "disclosure": "The brand confirmed to several outlets that the ad was AI-generated and that it had been removed.",
       "sources": [
         { "publisher": "NBC News", "date": "2025-12-10", "url": "https://www.nbcnews.com/world/europe/mcdonalds-ai-generated-christmas-advert-social-media-backlash-rcna248590" },
         { "publisher": "BNN Bloomberg (AFP)", "date": "2025-12-10", "url": "https://www.bnnbloomberg.ca/business/company-news/2025/12/10/not-lovin-it-mcdonalds-pulls-dutch-ai-christmas-ad" }
@@ -30,14 +24,8 @@
       "country": "US",
       "date": "2025-08",
       "uses": ["campaign"],
-      "note": {
-        "it": "Pagina pubblicitaria nel numero di agosto 2025 di Vogue USA con modelle generate con l’AI dall’agenzia londinese Seraphinne Vallora.",
-        "en": "A paid ad in the August 2025 issue of US Vogue featuring AI-generated models created by the London agency Seraphinne Vallora."
-      },
-      "disclosure": {
-        "it": "Una piccola dicitura stampata nella pubblicità indica che le modelle sono state create con l’AI.",
-        "en": "A small printed note in the ad states that the models were created with AI."
-      },
+      "note": "A paid ad in the August 2025 issue of US Vogue featuring AI-generated models created by the London agency Seraphinne Vallora.",
+      "disclosure": "A small printed note in the ad states that the models were created with AI.",
       "sources": [
         { "publisher": "RNZ", "date": "2025", "url": "https://www.rnz.co.nz/news/world/568415/her-features-are-flawless-but-this-model-in-vogue-isn-t-real" },
         { "publisher": "HyperAI", "date": "2025", "url": "https://hyper.ai/en/stories/ddb7072928fc72944180d1acbb303782" }
@@ -51,14 +39,8 @@
       "country": "DE",
       "date": "2025-05",
       "uses": ["campaign", "digital-twins"],
-      "note": {
-        "it": "Ha dichiarato che circa il 70% delle immagini delle sue campagne editoriali nel quarto trimestre 2024 era generato con l’AI, e che sta sviluppando gemelli digitali di modelle e modelli.",
-        "en": "Said that around 70% of its editorial campaign images in Q4 2024 were AI-generated, and that it is developing digital twins of models."
-      },
-      "disclosure": {
-        "it": "Dichiarazioni di un dirigente dell’azienda in un’intervista a Reuters.",
-        "en": "Statements by a company executive in an interview with Reuters."
-      },
+      "note": "Said that around 70% of its editorial campaign images in Q4 2024 were AI-generated, and that it is developing digital twins of models.",
+      "disclosure": "Statements by a company executive in an interview with Reuters.",
       "sources": [
         { "publisher": "The Star (Reuters)", "date": "2025-05-07", "url": "https://www.thestar.com.my/tech/tech-news/2025/05/07/zalando-uses-ai-to-speed-up-marketing-campaigns-cut-costs" }
       ]
@@ -71,14 +53,8 @@
       "country": "SE",
       "date": "2025-03",
       "uses": ["digital-twins", "social", "campaign"],
-      "note": {
-        "it": "Ha annunciato la creazione di gemelli digitali di 30 modelle e modelli reali, da usare sui social e nelle campagne. Secondo l’azienda, i modelli mantengono i diritti sui propri gemelli e vengono pagati per il loro uso.",
-        "en": "Announced digital twins of 30 real models, to be used on social media and in campaigns. According to the company, the models keep the rights to their twins and are paid for their use."
-      },
-      "disclosure": {
-        "it": "Annuncio pubblico del brand. Secondo la stampa, le immagini sui social sono contrassegnate come generate con l’AI.",
-        "en": "Public announcement by the brand. According to press reports, the social media images are marked as AI-generated."
-      },
+      "note": "Announced digital twins of 30 real models, to be used on social media and in campaigns. According to the company, the models keep the rights to their twins and are paid for their use.",
+      "disclosure": "Public announcement by the brand. According to press reports, the social media images are marked as AI-generated.",
       "sources": [
         { "publisher": "ABC30 (CNN)", "date": "2025", "url": "https://abc30.com/post/fashion-giant-hm-plans-use-ai-clones-human-models-not-everyone-is-happy/16115370/" },
         { "publisher": "AI Magazine", "date": "2025", "url": "https://aimagazine.com/articles/inside-h-ms-plans-to-use-ai-digital-twin-models" },
@@ -93,14 +69,8 @@
       "country": "US",
       "date": "2024-11",
       "uses": ["video"],
-      "note": {
-        "it": "Ha rifatto con l’AI generativa lo spot natalizio «Holidays Are Coming» del 1995, lavorando con gli studi Secret Level, Silverside AI e The Wild Card. Nel 2025 ha pubblicato una nuova versione, sempre realizzata con l’AI.",
-        "en": "Remade its 1995 “Holidays Are Coming” Christmas ad with generative AI, working with the studios Secret Level, Silverside AI and The Wild Card. In 2025 it released a new version, also made with AI."
-      },
-      "disclosure": {
-        "it": "Dicitura nello spot che lo attribuisce allo strumento AI del brand, e dichiarazioni pubbliche dell’azienda.",
-        "en": "An on-screen note crediting the brand’s AI tool, plus public statements by the company."
-      },
+      "note": "Remade its 1995 “Holidays Are Coming” Christmas ad with generative AI, working with the studios Secret Level, Silverside AI and The Wild Card. In 2025 it released a new version, also made with AI.",
+      "disclosure": "An on-screen note crediting the brand’s AI tool, plus public statements by the company.",
       "sources": [
         { "publisher": "TechInformed", "date": "2024-11", "url": "https://techinformed.com/coca-colas-ai-generated-holidays-are-coming-ad-sparks-debate/" },
         { "publisher": "afaqs!", "date": "2025-11", "url": "https://www.afaqs.com/news/advertising/coca-colas-ai-made-holidays-are-coming-ad-stirs-controversyagain-10625029" }
@@ -114,14 +84,8 @@
       "country": "ES",
       "date": "2024-07",
       "uses": ["campaign"],
-      "note": {
-        "it": "Ha lanciato una campagna per la sua linea dedicata agli adolescenti realizzata con modelle generate con l’AI, presentandola come un progetto di innovazione.",
-        "en": "Launched a campaign for its teen line made with AI-generated models, presenting it as an innovation project."
-      },
-      "disclosure": {
-        "it": "Annuncio pubblico del brand.",
-        "en": "Public announcement by the brand."
-      },
+      "note": "Launched a campaign for its teen line made with AI-generated models, presenting it as an innovation project.",
+      "disclosure": "Public announcement by the brand.",
       "sources": [
         { "publisher": "Quartz", "date": "2024", "url": "https://qz.com/retail-fashion-mango-ai-generated-campaign-collection-1851587012" },
         { "publisher": "RetailDetail", "date": "2024", "url": "https://retaildetail.eu/news/fashion/why-mango-is-replacing-fashion-models-with-ai" }
@@ -135,14 +99,8 @@
       "country": "US",
       "date": "2023-08",
       "uses": ["campaign"],
-      "note": {
-        "it": "Ha celebrato i suoi 20 anni con una campagna basata su immagini generate con l’AI.",
-        "en": "Marked its 20th anniversary with a campaign built on AI-generated imagery."
-      },
-      "disclosure": {
-        "it": "Annuncio pubblico del brand.",
-        "en": "Public announcement by the brand."
-      },
+      "note": "Marked its 20th anniversary with a campaign built on AI-generated imagery.",
+      "disclosure": "Public announcement by the brand.",
       "sources": [
         { "publisher": "WWD (via PressReader)", "date": "2023-08-30", "url": "https://www.pressreader.com/usa/wwd-digital-daily/20230830/281968907252967" }
       ]
@@ -155,14 +113,8 @@
       "country": "US",
       "date": "2023-03",
       "uses": ["ecommerce"],
-      "note": {
-        "it": "Ha annunciato una collaborazione con lo studio Lalaland.ai per creare modelle e modelli generati con l’AI, presentata come un modo per mostrare più tipi di corpo. L’annuncio ha suscitato forti critiche.",
-        "en": "Announced a partnership with the studio Lalaland.ai to create AI-generated models, framed as a way to show more body types. The announcement drew strong criticism."
-      },
-      "disclosure": {
-        "it": "Annuncio pubblico del brand.",
-        "en": "Public announcement by the brand."
-      },
+      "note": "Announced a partnership with the studio Lalaland.ai to create AI-generated models, framed as a way to show more body types. The announcement drew strong criticism.",
+      "disclosure": "Public announcement by the brand.",
       "sources": [
         { "publisher": "YPulse", "date": "2023-03-28", "url": "https://www.ypulse.com/newsfeed/2023/03/28/levis-is-using-models-created-by-artificial-intelligence-to-increase-diversity/" },
         { "publisher": "RTÉ", "date": "2023-06-29", "url": "https://www.rte.ie/lifestyle/fashion/2023/0629/1391228-how-ai-is-creating-fashion-models-designs-and-campaigns" }
@@ -176,14 +128,8 @@
       "country": "US",
       "date": "2025-10",
       "uses": [],
-      "note": {
-        "it": "Il marchio di American Eagle si è impegnato pubblicamente a non usare corpi o persone generati con l’AI nella sua pubblicità.",
-        "en": "American Eagle’s brand publicly pledged not to use AI-generated bodies or people in its advertising."
-      },
-      "disclosure": {
-        "it": "Impegno pubblicato dal brand sui social e ripreso dalla stampa.",
-        "en": "Pledge posted by the brand on social media and reported by the press."
-      },
+      "note": "American Eagle’s brand publicly pledged not to use AI-generated bodies or people in its advertising.",
+      "disclosure": "Pledge posted by the brand on social media and reported by the press.",
       "sources": [
         { "publisher": "Cint", "date": "2025", "url": "https://www.cint.com/newsroom/63-of-consumers-think-brands-have-a-duty-to-disclose-when-they-use-ai-in-marketing/" },
         { "publisher": "Enterprise", "date": "2025-10-30", "url": "https://enterpriseam.com/egypt/2025/10/30/the-rise-of-anti-ai-marketing/" }

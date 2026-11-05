@@ -1,4 +1,4 @@
-name: Controllo dati
+name: Data check
 
 on:
   push:
@@ -15,5 +15,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Controlla data/brands.json
+      - name: Check data/brands.json
         run: python3 scripts/validate.py

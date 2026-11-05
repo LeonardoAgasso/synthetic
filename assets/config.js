@@ -1,15 +1,12 @@
-// Configurazione del sito. È l'unico file da toccare per collegarlo al tuo repository.
+// Site configuration. This is the only file to edit to connect the site to your repository.
 window.SITE_CONFIG = {
-  // Indirizzo del repository su GitHub, senza slash finale.
+  // GitHub repository URL, without a trailing slash.
   repoUrl: "https://github.com/LeonardoAgasso/synthetic",
 
-  // Facoltativo: un modulo esterno (per esempio un Google Form) per chi non ha un account GitHub.
-  // Se lo compili, il pulsante "Segnala un brand" porterà qui invece che a GitHub.
+  // Optional: an external form (for example a Google Form) for people without a GitHub account.
+  // If set, the "Report a brand" buttons will point here instead of GitHub.
   reportFormUrl: "",
 
-  // Facoltativo: un indirizzo email per correzioni e richieste. Se è vuoto, non viene mostrato.
-  contactEmail: "",
-
-  // Lingua usata quando il browser non è né in italiano né in inglese.
-  defaultLang: "en"
+  // Optional: an email address for corrections and requests. Hidden if empty.
+  contactEmail: ""
 };

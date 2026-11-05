@@ -1,4 +1,4 @@
-/* ---------- Font locale (Archivo, licenza SIL OFL: vedi fonts/OFL.txt) ---------- */
+/* ---------- Local font (Archivo, SIL OFL licence: see fonts/OFL.txt) ---------- */
 
 @font-face {
   font-family: "Archivo";
@@ -22,7 +22,7 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* ---------- Colori e misure ---------- */
+/* ---------- Colours and sizes ---------- */
 
 :root {
   color-scheme: light;
@@ -117,7 +117,7 @@ a:hover {
   padding-inline: clamp(1rem, 4vw, 2.5rem);
 }
 
-/* ---------- Intestazione ---------- */
+/* ---------- Header ---------- */
 
 .site-header {
   display: flex;
@@ -156,31 +156,7 @@ a:hover {
   text-underline-offset: 0.25em;
 }
 
-.lang-switch {
-  display: inline-flex;
-  border: 1.5px solid var(--line);
-  border-radius: 999px;
-  padding: 2px;
-}
-
-.lang-switch button {
-  font: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  padding: 0.2rem 0.65rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.lang-switch button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--bg);
-}
-
-/* ---------- Apertura ---------- */
+/* ---------- Hero ---------- */
 
 .hero {
   display: grid;
@@ -229,7 +205,7 @@ a:hover {
   filter: brightness(1.08);
 }
 
-/* L'etichetta di composizione: l'unico elemento "decorativo" del sito, che però porta dati veri. */
+/* The composition label: the site's only "decorative" element, and it still carries real data. */
 
 .care-label {
   --tilt: -3deg;
@@ -311,7 +287,7 @@ a:hover {
   100% { transform: rotate(var(--tilt)); }
 }
 
-/* ---------- Registro ---------- */
+/* ---------- Register ---------- */
 
 .registry {
   padding-bottom: 4rem;
@@ -515,7 +491,7 @@ a:hover {
   color: var(--muted);
 }
 
-/* ---------- Pagina "Come funziona" ---------- */
+/* ---------- "How it works" page ---------- */
 
 .prose {
   max-width: var(--measure);
@@ -542,7 +518,7 @@ a:hover {
   margin: 0 0 1rem;
 }
 
-/* ---------- Piè di pagina ---------- */
+/* ---------- Footer ---------- */
 
 .site-footer {
   padding-block: 2.5rem 3rem;
@@ -577,7 +553,7 @@ a:hover {
   list-style: none;
 }
 
-/* ---------- Schermi piccoli ---------- */
+/* ---------- Small screens ---------- */
 
 @media (max-width: 760px) {
   .hero {

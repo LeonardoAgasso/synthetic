@@ -33,19 +33,9 @@
     return /^https?:\/\//i.test(url || "") ? url : "#";
   }
 
-  function lang() {
-    return Site.getLang();
-  }
-
-  function localized(obj) {
-    if (!obj) return "";
-    if (typeof obj === "string") return obj;
-    return obj[lang()] || obj.it || obj.en || "";
-  }
-
   function countryName(code) {
     try {
-      return new Intl.DisplayNames([lang()], { type: "region" }).of(code) || code;
+      return new Intl.DisplayNames([Site.lang], { type: "region" }).of(code) || code;
     } catch (e) {
       return code;
     }
@@ -59,7 +49,7 @@
     var options = parts.length === 2
       ? { month: "long", year: "numeric", timeZone: "UTC" }
       : { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" };
-    return new Intl.DateTimeFormat(lang(), options).format(date);
+    return new Intl.DateTimeFormat(Site.lang, options).format(date);
   }
 
   function label(prefix, key) {
@@ -75,7 +65,7 @@
     return Array.from(new Set(values.filter(Boolean)));
   }
 
-  // ---------- Dati ----------
+  // ---------- Data ----------
 
   function entriesIn(category) {
     return state.data.entries
@@ -86,8 +76,8 @@
   function haystack(entry) {
     return [
       entry.brand,
-      entry.note && entry.note.it, entry.note && entry.note.en,
-      entry.disclosure && entry.disclosure.it, entry.disclosure && entry.disclosure.en,
+      entry.note,
+      entry.disclosure,
       countryName(entry.country), entry.country,
       label("sector", entry.sector),
       (entry.uses || []).map(function (u) { return label("use", u); }).join(" "),
@@ -122,11 +112,11 @@
     var pool = entriesIn(state.category);
 
     var sectors = unique(pool.map(function (e) { return e.sector; }))
-      .sort(function (a, b) { return label("sector", a).localeCompare(label("sector", b), lang()); });
+      .sort(function (a, b) { return label("sector", a).localeCompare(label("sector", b), Site.lang); });
     state.sector = fillSelect(els.sector, sectors, function (v) { return label("sector", v); }, state.sector);
 
     var uses = unique([].concat.apply([], pool.map(function (e) { return e.uses || []; })))
-      .sort(function (a, b) { return label("use", a).localeCompare(label("use", b), lang()); });
+      .sort(function (a, b) { return label("use", a).localeCompare(label("use", b), Site.lang); });
     state.use = fillSelect(els.use, uses, function (v) { return label("use", v); }, state.use);
     els.useWrap.hidden = uses.length === 0;
 
@@ -174,8 +164,8 @@
           (tags.length ? "<ul class=\"tags\">" + tags.map(function (tag) {
             return "<li class=\"tag\">" + esc(tag) + "</li>";
           }).join("") + "</ul>" : "") +
-          "<p class=\"entry-note\">" + esc(localized(entry.note)) + "</p>" +
-          "<p class=\"entry-detail\"><span class=\"entry-key\">" + esc(t("entry.disclosure")) + "</span> " + esc(localized(entry.disclosure)) + "</p>" +
+          "<p class=\"entry-note\">" + esc(entry.note) + "</p>" +
+          "<p class=\"entry-detail\"><span class=\"entry-key\">" + esc(t("entry.disclosure")) + "</span> " + esc(entry.disclosure) + "</p>" +
           "<p class=\"entry-detail\"><span class=\"entry-key\">" + esc(t("entry.sources")) + "</span> " + sources + "</p>" +
           "<p class=\"entry-fix\"><a href=\"" + esc(Site.correctionUrl(entry)) + "\" rel=\"noopener\" target=\"_blank\">" + esc(t("entry.fix")) + "</a></p>" +
         "</article>" +
@@ -229,13 +219,12 @@
 
   function toCsv(entries) {
     var columns = ["id", "brand", "category", "sector", "country", "date", "uses",
-      "note_it", "note_en", "disclosure_it", "disclosure_en", "sources"];
+      "note", "disclosure", "sources"];
     var rows = entries.map(function (e) {
       return [
         e.id, e.brand, e.category, e.sector, e.country, e.date,
         (e.uses || []).join("; "),
-        e.note && e.note.it, e.note && e.note.en,
-        e.disclosure && e.disclosure.it, e.disclosure && e.disclosure.en,
+        e.note, e.disclosure,
         (e.sources || []).map(function (s) { return s.url; }).join(" ")
       ];
     });
@@ -243,7 +232,7 @@
       var s = String(v == null ? "" : v);
       return /[",;\r\n]/.test(s) ? "\"" + s.replace(/"/g, "\"\"") + "\"" : s;
     }
-    // Il BOM iniziale fa aprire correttamente gli accenti in Excel.
+    // The leading BOM makes Excel open accented characters correctly.
     return "\ufeff" + [columns].concat(rows).map(function (r) { return r.map(cell).join(","); }).join("\r\n");
   }
 
@@ -260,7 +249,7 @@
     setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
   }
 
-  // ---------- Eventi ----------
+  // ---------- Events ----------
 
   els.search.addEventListener("input", function () {
     state.q = els.search.value;
@@ -296,9 +285,7 @@
 
   els.csv.addEventListener("click", downloadCsv);
 
-  document.addEventListener("langchange", renderAll);
-
-  // ---------- Avvio ----------
+  // ---------- Start ----------
 
   els.status.hidden = false;
   els.status.innerHTML = "<p>" + esc(t("results.loading")) + "</p>";

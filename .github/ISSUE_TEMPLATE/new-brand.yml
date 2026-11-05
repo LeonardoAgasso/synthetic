@@ -1,0 +1,66 @@
+name: Report a brand
+description: Suggest a brand that has disclosed using AI-generated models, or that has pledged not to.
+title: "[New] "
+labels: ["report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. We only list cases the brand **disclosed** (post, press release, note in the ad) or **confirmed** to a news outlet. Suspicions and image analysis aren't enough.
+  - type: input
+    id: brand
+    attributes:
+      label: Brand
+      placeholder: "e.g. Guess"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Type of case
+      options:
+        - Uses AI-generated models
+        - Pledged not to use them
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: The brand's post, press release or an article from a reliable outlet.
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: When?
+      placeholder: "2025-08"
+  - type: input
+    id: country
+    attributes:
+      label: Brand's country
+  - type: dropdown
+    id: uses
+    attributes:
+      label: Where was it used?
+      multiple: true
+      options:
+        - Ad campaign
+        - Social media
+        - Product photos
+        - Video ad
+        - Digital twins
+        - Virtual influencer
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: What happened, in two or three sentences.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Check
+      options:
+        - label: The source shows the brand disclosed or confirmed it.
+          required: true

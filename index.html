@@ -1,95 +1,92 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
+  <meta name="robots" content="noindex">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Synthetic: i brand che usano modelle e modelli generati con l’AI</title>
-  <meta name="description" content="Un registro pubblico, con fonti, dei brand che hanno dichiarato di usare persone generate con l’AI nella loro pubblicità.">
+  <title>Synthetic: brands that use AI-generated models</title>
+  <meta name="description" content="A public, sourced register of brands that have said they use AI-generated people in their advertising.">
 
-  <!-- Anteprima per social e chat: sostituisci TUO-UTENTE con il tuo username GitHub -->
+  <!-- Preview for social media and chat apps: replace YOUR-USERNAME with your GitHub username -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Synthetic: quali brand usano modelle e modelli generati con l’AI?">
-  <meta property="og:description" content="Un registro pubblico, con fonti, dei brand che lo hanno dichiarato.">
-  <meta property="og:url" content="https://TUO-UTENTE.github.io/synthetic/">
-  <meta property="og:image" content="https://TUO-UTENTE.github.io/synthetic/assets/og-image.png">
+  <meta property="og:title" content="Synthetic: which brands use AI-generated models in their ads?">
+  <meta property="og:description" content="A public, sourced register of the brands that have said so.">
+  <meta property="og:url" content="https://YOUR-USERNAME.github.io/synthetic/">
+  <meta property="og:image" content="https://YOUR-USERNAME.github.io/synthetic/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body data-title="meta.homeTitle">
+<body>
 
   <div class="wrap">
     <header class="site-header">
       <a class="wordmark" href="./">Synthetic</a>
       <nav class="nav">
-        <a href="metodo.html" data-i18n="nav.method">Come funziona</a>
-        <a href="#" data-link="repo" rel="noopener" data-i18n="nav.repo">GitHub</a>
-        <div class="lang-switch" role="group" data-i18n-aria="nav.lang" aria-label="Lingua">
-          <button type="button" data-set-lang="it" aria-pressed="true" lang="it">IT</button>
-          <button type="button" data-set-lang="en" aria-pressed="false" lang="en">EN</button>
-        </div>
+        <a href="how-it-works.html">How it works</a>
+        <a href="#" data-link="repo" rel="noopener">GitHub</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
         <div>
-          <h1 data-i18n="hero.title">Quali brand usano modelle e modelli generati con l’AI?</h1>
-          <p class="hero-intro" data-i18n="hero.intro">Un registro pubblico dei brand che hanno dichiarato di usare persone generate con l’intelligenza artificiale nella loro pubblicità. Ogni voce ha la sua fonte.</p>
+          <h1>Which brands use AI-generated models in their ads?</h1>
+          <p class="hero-intro">A public register of brands that have said they use AI-generated people in their advertising. Every entry comes with its source.</p>
           <div class="actions">
-            <a class="button" href="#" data-link="report" rel="noopener" target="_blank" data-i18n="hero.report">Segnala un brand</a>
-            <a href="metodo.html" data-i18n="hero.method">Come scegliamo i casi</a>
+            <a class="button" href="#" data-link="report" rel="noopener" target="_blank">Report a brand</a>
+            <a href="how-it-works.html">How we choose cases</a>
           </div>
         </div>
 
         <aside class="care-label" aria-live="polite">
-          <p class="care-label-title" data-i18n="label.title">Composizione</p>
+          <p class="care-label-title">Composition</p>
           <p class="care-label-big" id="label-brands">–</p>
           <p class="care-label-sub" id="label-countries"></p>
-          <p class="care-label-rule" data-i18n="label.rule">Solo casi dichiarati o confermati dal brand.</p>
+          <p class="care-label-rule">Only cases the brand disclosed or confirmed.</p>
           <p class="care-label-updated" id="label-updated"></p>
         </aside>
       </section>
 
       <section class="registry" aria-labelledby="registry-title">
-        <h2 class="visually-hidden" id="registry-title" data-i18n="nav.home">Registro</h2>
+        <h2 class="visually-hidden" id="registry-title">Register</h2>
 
         <div class="registry-head">
-          <div class="tabs" role="group" data-i18n-aria="tabs.label" aria-label="Mostra">
+          <div class="tabs" role="group" aria-label="Show">
             <button type="button" class="tab" data-category="ai" aria-pressed="true">
-              <span data-i18n="tabs.ai">Usano modelli AI</span>
+              <span>Use AI models</span>
               <span class="tab-count"></span>
             </button>
             <button type="button" class="tab" data-category="no-ai" aria-pressed="false">
-              <span data-i18n="tabs.noai">Hanno scelto di non usarli</span>
+              <span>Pledged not to</span>
               <span class="tab-count"></span>
             </button>
           </div>
 
           <div class="filters">
             <div class="field field-search">
-              <label for="search" data-i18n="filters.search">Cerca</label>
-              <input type="search" id="search" autocomplete="off" data-i18n-placeholder="filters.searchPlaceholder" placeholder="Brand, paese, campagna…">
+              <label for="search">Search</label>
+              <input type="search" id="search" autocomplete="off" placeholder="Brand, country, campaign…">
             </div>
             <div class="field">
-              <label for="filter-sector" data-i18n="filters.sector">Settore</label>
+              <label for="filter-sector">Sector</label>
               <select id="filter-sector"></select>
             </div>
             <div class="field" id="filter-use-wrap">
-              <label for="filter-use" data-i18n="filters.use">Uso</label>
+              <label for="filter-use">Use</label>
               <select id="filter-use"></select>
             </div>
             <div class="field">
-              <label for="filter-year" data-i18n="filters.year">Anno</label>
+              <label for="filter-year">Year</label>
               <select id="filter-year"></select>
             </div>
           </div>
 
           <div class="results-bar">
             <span id="count" aria-live="polite"></span>
-            <button type="button" class="linklike" id="clear" hidden data-i18n="filters.clear">Azzera filtri</button>
+            <button type="button" class="linklike" id="clear" hidden>Clear filters</button>
           </div>
         </div>
 
@@ -101,21 +98,21 @@
     <footer class="site-footer">
       <div class="footer-grid">
         <div>
-          <p data-i18n="footer.disclaimer">Progetto indipendente, non affiliato ai brand citati. I marchi appartengono ai rispettivi titolari. Non pubblichiamo immagini delle campagne: rimandiamo sempre alle fonti.</p>
+          <p>An independent project, not affiliated with any of the brands listed. Trademarks belong to their owners. We don’t publish campaign images: we always link to the sources.</p>
         </div>
         <div>
-          <h2 data-i18n="footer.data">Scarica i dati</h2>
+          <h2>Download the data</h2>
           <ul>
             <li><button type="button" class="linklike" id="download-csv">CSV</button></li>
             <li><a href="data/brands.json">JSON</a></li>
           </ul>
         </div>
         <div>
-          <h2 data-i18n="footer.contribute">Partecipa</h2>
+          <h2>Contribute</h2>
           <ul>
-            <li><a href="#" data-link="report" rel="noopener" target="_blank" data-i18n="footer.report">Segnala un brand</a></li>
-            <li><a href="#" data-link="correct" rel="noopener" target="_blank" data-i18n="footer.correct">Chiedi una correzione</a></li>
-            <li data-email hidden><a href="#" data-i18n="footer.email">Scrivici</a></li>
+            <li><a href="#" data-link="report" rel="noopener" target="_blank">Report a brand</a></li>
+            <li><a href="#" data-link="correct" rel="noopener" target="_blank">Request a correction</a></li>
+            <li data-email hidden><a href="#">Email us</a></li>
           </ul>
         </div>
       </div>

@@ -1,112 +1,107 @@
 # Synthetic
 
-Registro pubblico, con fonti, dei brand che hanno dichiarato di usare modelle e modelli generati con l’AI nella loro pubblicità. Elenca anche i brand che si sono impegnati a non farlo.
+A public, sourced register of brands that have said they use AI-generated models in their advertising. It also lists brands that have pledged not to.
 
-È un sito statico pensato per GitHub Pages: niente build, niente dipendenze, niente cookie. Interfaccia in italiano e inglese.
+It's a static site built for GitHub Pages: no build step, no dependencies, no cookies.
 
 ```
 synthetic/
-├── index.html               Pagina principale (registro, filtri, ricerca)
-├── metodo.html              Come funziona: criteri, correzioni, privacy
+├── index.html               Main page (register, filters, search)
+├── how-it-works.html        How it works: criteria, corrections, privacy
 ├── data/
-│   └── brands.json          I dati: è l'unico file da modificare per aggiungere casi
+│   └── brands.json          The data: the only file to edit when adding cases
 ├── assets/
-│   ├── config.js            Indirizzo del repo, modulo esterno, email
-│   ├── common.js            Traduzioni IT/EN e collegamenti
-│   ├── app.js               Filtri, elenco, esportazione CSV
+│   ├── config.js            Repo URL, external form, email
+│   ├── common.js            Interface strings and links
+│   ├── app.js               Filters, list, CSV export
 │   ├── style.css
 │   ├── favicon.svg
-│   ├── og-image.png         Anteprima per i link condivisi su social e chat
-│   └── fonts/               Font Archivo, ospitato in locale (licenza OFL)
+│   ├── og-image.png         Preview image for links shared on social media and chat apps
+│   └── fonts/               Archivo font, self-hosted (OFL licence)
 ├── scripts/
-│   └── validate.py          Controlla che brands.json sia corretto
+│   └── validate.py          Checks that brands.json is valid
 ├── .github/
-│   ├── ISSUE_TEMPLATE/      Moduli "Segnala un brand" e "Chiedi una correzione"
+│   ├── ISSUE_TEMPLATE/      "Report a brand" and "Request a correction" forms
 │   └── workflows/
-│       └── validate.yml     Esegue il controllo dei dati a ogni push
+│       └── validate.yml     Runs the data check on every push
 └── .nojekyll
 ```
 
-## Prima di pubblicare
+## Before publishing
 
-1. **Sostituisci `TUO-UTENTE`** con il tuo username GitHub in `assets/config.js` e in `index.html` (nei tag `og:`). Se chiami il repository in modo diverso da `synthetic`, cambia anche quello.
-2. **Ricontrolla le fonti dei casi iniziali.** Le voci di `data/brands.json` sono state compilate da articoli di stampa: apri ogni link e verifica che dica davvero quello che riporta la voce. Alcuni articoli potrebbero essere dietro paywall o non più online. È il passaggio più importante, perché un’attribuzione sbagliata è il rischio principale di un progetto così.
-3. Facoltativo: scegli una licenza. Una combinazione comune è MIT per il codice e CC BY 4.0 per i dati, così giornalisti e ricercatori sanno come possono riusarli.
+1. **Replace `YOUR-USERNAME`** with your GitHub username in `index.html` (in the `og:` tags), and check `repoUrl` in `assets/config.js`. If your repository isn't called `synthetic`, change that too.
+2. **Double-check the sources of the initial cases.** The entries in `data/brands.json` were compiled from press articles: open every link and check that it really says what the entry reports. Some articles may be paywalled or no longer online. This is the most important step, because a wrong attribution is the main risk for a project like this.
+3. Optional: choose a licence. A common combination is MIT for the code and CC BY 4.0 for the data, so journalists and researchers know how they can reuse it.
 
-## Provarlo in locale
+## Running it locally
 
-Il sito carica `data/brands.json`, e i browser bloccano questo caricamento se apri `index.html` con un doppio clic. Serve un piccolo server locale:
+The site loads `data/brands.json`, and browsers block that if you open `index.html` by double-clicking it. You need a small local server:
 
 ```bash
 cd synthetic
 python3 -m http.server 8000
 ```
 
-Poi apri <http://localhost:8000>. In alternativa, con Node.js: `npx serve`.
+Then open <http://localhost:8000>. Alternatively, with Node.js: `npx serve`.
 
-## Pubblicarlo su GitHub Pages
+## Publishing on GitHub Pages
 
-1. Crea un repository **pubblico** e vuoto su <https://github.com/new> (senza README, senza licenza).
-2. Dalla cartella del progetto:
+1. Create an empty **public** repository at <https://github.com/new> (no README, no licence).
+2. From the project folder:
 
    ```bash
    git init
    git add .
-   git commit -m "Prima versione"
+   git commit -m "First version"
    git branch -M main
-   git remote add origin https://github.com/TUO-UTENTE/synthetic.git
+   git remote add origin https://github.com/YOUR-USERNAME/synthetic.git
    git push -u origin main
    ```
 
-   Con la GitHub CLI basta: `gh repo create synthetic --public --source=. --push`
+   With the GitHub CLI, this is enough: `gh repo create synthetic --public --source=. --push`
 
-3. Nel repository vai su **Settings → Pages**. In "Build and deployment" scegli **Deploy from a branch**, poi branch `main` e cartella `/ (root)`, e salva.
-4. Dopo un paio di minuti il sito è online su `https://TUO-UTENTE.github.io/synthetic/`.
-5. Vai su **Issues → Labels** e crea le etichette `segnalazione` e `correzione`: i moduli le usano, ma GitHub le applica solo se esistono già.
+3. In the repository, go to **Settings → Pages**. Under "Build and deployment" choose **Deploy from a branch**, then branch `main` and folder `/ (root)`, and save.
+4. After a couple of minutes the site is live at `https://YOUR-USERNAME.github.io/synthetic/`.
+5. Go to **Issues → Labels** and create the `report` and `correction` labels: the forms use them, but GitHub only applies labels that already exist.
 
-## Aggiungere un caso
+## Adding a case
 
-Aggiungi un oggetto all’elenco `entries` in `data/brands.json` e aggiorna la data `updated` in cima al file.
+Add an object to the `entries` list in `data/brands.json` and update the `updated` date at the top of the file.
 
-| Campo | Cosa contiene |
+| Field | Contents |
 |---|---|
-| `id` | Identificativo unico, minuscole e trattini: `guess-2025-vogue` |
-| `brand` | Nome del brand |
-| `category` | `ai` (usa modelli AI) oppure `no-ai` (si è impegnato a non usarli) |
+| `id` | Unique identifier, lowercase with hyphens: `guess-2025-vogue` |
+| `brand` | Brand name |
+| `category` | `ai` (uses AI models) or `no-ai` (pledged not to use them) |
 | `sector` | `fashion`, `ecommerce`, `food`, `beauty`, `tech`, `auto`, `other` |
-| `country` | Codice di due lettere del paese del brand: `IT`, `US`, `DE`… |
-| `date` | Quando è uscito o è stato dichiarato: `2025`, `2025-08` o `2025-08-14` |
-| `uses` | Uno o più tra `campaign`, `social`, `ecommerce`, `video`, `digital-twins`, `virtual-influencer`. Vuoto per i casi `no-ai` |
-| `note` | Cosa è successo, con `it` ed `en`. Basta una lingua: il sito usa l’altra come riserva |
-| `disclosure` | Come il brand lo ha dichiarato, con `it` ed `en` |
-| `sources` | Una o più fonti: `{ "publisher": "...", "date": "...", "url": "https://..." }` |
+| `country` | Two-letter code of the brand's country: `IT`, `US`, `DE`… |
+| `date` | When it came out or was disclosed: `2025`, `2025-08` or `2025-08-14` |
+| `uses` | One or more of `campaign`, `social`, `ecommerce`, `video`, `digital-twins`, `virtual-influencer`. Empty for `no-ai` cases |
+| `note` | What happened |
+| `disclosure` | How the brand disclosed it |
+| `sources` | One or more sources: `{ "publisher": "...", "date": "...", "url": "https://..." }` |
 
-Poi controlla i dati prima del push:
+Then check the data before pushing:
 
 ```bash
 python3 scripts/validate.py
 ```
 
-Lo stesso controllo parte in automatico su GitHub a ogni push che tocca `data/` (scheda **Actions**).
+The same check runs automatically on GitHub on every push that touches `data/` (**Actions** tab).
 
-Per aggiungere un nuovo settore o un nuovo tipo di uso, aggiornalo sia in `scripts/validate.py` sia in `assets/common.js`, in entrambe le lingue.
+To add a new sector or use, update it in both `scripts/validate.py` and `assets/common.js`.
 
-## Gestire le segnalazioni
+## Handling reports
 
-Le persone usano il pulsante "Segnala un brand", che apre un modulo già strutturato su GitHub. Un flusso semplice: verifichi la fonte, aggiungi la voce a `brands.json`, chiudi la segnalazione con il link al commit.
+People use the "Report a brand" button, which opens a structured form on GitHub. A simple workflow: verify the source, add the entry to `brands.json`, and close the report with a link to the commit.
 
-Chi non ha un account GitHub non può aprire segnalazioni. Se vuoi raccoglierle anche da loro, crea un Google Form e incolla il suo indirizzo in `reportFormUrl` dentro `assets/config.js`: i pulsanti "Segnala un brand" porteranno lì. Puoi anche indicare un `contactEmail` per le correzioni.
+People without a GitHub account can't open reports. If you want to collect them too, create a Google Form and paste its URL into `reportFormUrl` in `assets/config.js`: the "Report a brand" buttons will point there. You can also set a `contactEmail` for corrections.
 
-Ogni voce ha un link "Segnala un errore" che apre il modulo di correzione già compilato con il nome della voce.
+Every entry has a "Report an error" link that opens the correction form pre-filled with the entry's name.
 
-## Condividerlo
+## Privacy and legal notes
 
-- Per i gruppi internazionali, condividi il link con `?lang=en`: `https://TUO-UTENTE.github.io/synthetic/?lang=en`. Senza parametro, il sito sceglie la lingua in base al browser.
-- L’immagine di anteprima (`assets/og-image.png`) è in italiano e non contiene numeri, quindi non va rifatta quando aggiungi casi.
-
-## Privacy e note legali
-
-- Il sito non usa cookie né strumenti di analisi. Il font è ospitato nel repository e non su Google Fonts, così gli indirizzi IP dei visitatori non vengono inviati a terzi. L’unica cosa salvata nel browser è la lingua scelta.
-- GitHub Pages può registrare gli indirizzi IP dei visitatori per motivi di sicurezza: lo dice anche la pagina "Come funziona".
-- Il font Archivo è distribuito con licenza SIL Open Font License (`assets/fonts/OFL.txt`).
-- Le regole che proteggono il progetto sono già scritte in `metodo.html`: solo casi dichiarati o confermati, una fonte per ogni voce, nessuna immagine delle campagne, correzioni rapide e tracciate.
+- The site uses no cookies or analytics, and stores nothing in the browser. The font is hosted in the repository rather than on Google Fonts, so visitors' IP addresses aren't sent to third parties.
+- GitHub Pages may log visitors' IP addresses for security purposes: the "How it works" page says so too.
+- The Archivo font is distributed under the SIL Open Font License (`assets/fonts/OFL.txt`).
+- The rules that protect the project are already written in `how-it-works.html`: only disclosed or confirmed cases, a source for every entry, no campaign images, quick and traceable corrections.
